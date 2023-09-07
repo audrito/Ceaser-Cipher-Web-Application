@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AntiSystemAgent</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="matrix-background">
+        <canvas id="c"></canvas>
+        <div class="matrix-fall"></div>
+    </div>
+    <div class="container">
+        <h1 class="header">AntiSystemAgent</h1>
+        <form method="POST" class="transparent-form" id="encryptionForm">
+            <textarea id="message" name="message" placeholder="enter your message here" rows="10" cols="50" class="text-input transparent-textarea" required></textarea><br><br>
+            <label for="shift" style="margin-bottom: 10px;">Shift Value :</label><br><br>
+            <textarea id="shift" name="shift" placeholder="1-25" rows="1" cols="2" pattern="[0-9]*" inputmode="numeric" class="text-input short-textarea" required></textarea><br><br>
+            <input type="submit" value="&#x1F512; Encrypt" class="submit-button">
+        </form>
+        <h2 class="result-header">Encrypted Message:</h2>
+        <p class="result-text" id="encryptedMessage"></p>
+    </div>
+    <canvas id="matrix-canvas"></canvas>
+    <script src="{{ url_for('static', filename='matrix.js') }}"></script>
+</body>
+</html>
